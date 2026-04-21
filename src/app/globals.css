@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — rustic-luxe lodge aesthetic */
+  --color-charcoal: #1a1a1a;         /* primary background */
+  --color-charcoal-light: #2a2a2a;   /* elevated surfaces */
+  --color-gold: #c9a96e;             /* primary accent */
+  --color-gold-dark: #a8883a;        /* hover/pressed */
+  --color-gold-light: #e8d5a8;       /* subtle highlights */
+  --color-cream: #f5f0e8;            /* light text + ivory sections */
+  --color-cream-dark: #e8dfd1;       /* cream elevated */
+  --color-sage: #4a5c3f;             /* secondary accent — forest green */
+  --color-sage-light: #6b8062;       /* sage hover */
+  --color-wood: #6b4c3b;             /* tertiary accent — warm brown */
+  --color-wood-dark: #4a3428;        /* wood shadow */
+
+  /* Typography */
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-script: var(--font-great-vibes), "Brush Script MT", cursive;
+  --font-sans: var(--font-lato), system-ui, -apple-system, sans-serif;
+
+  /* Tracking for uppercase serif headings (per brand guide) */
+  --tracking-brand: 0.1em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-charcoal);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    letter-spacing: var(--tracking-brand);
+  }
+
+  /* Selection styling matches brand gold */
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
+  }
+}
+
+@layer utilities {
+  .font-script {
+    font-family: var(--font-script);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  /* Warm radial overlay used on dark hero backgrounds */
+  .overlay-warm {
+    background-image: radial-gradient(
+      ellipse at center,
+      rgba(201, 169, 110, 0.18) 0%,
+      rgba(26, 26, 26, 0.85) 60%,
+      rgba(26, 26, 26, 0.95) 100%
+    );
+  }
+
+  /* Subtle wood-grain texture overlay (CSS-only, low contrast) */
+  .texture-grain {
+    position: relative;
+  }
+  .texture-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 2px,
+        rgba(245, 240, 232, 0.4) 2px 3px
+      );
+  }
+}
