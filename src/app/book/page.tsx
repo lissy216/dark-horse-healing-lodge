@@ -1,46 +1,74 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { LinkButton } from "@/components/Button";
+import { SimplyBookEmbed } from "@/components/SimplyBookEmbed";
 
 export const metadata: Metadata = {
   title: "Book / Rental Info",
   description:
-    "Flexible rental options at Dark Horse Healing Lodge — hourly, half-day, full-day, and multi-day bookings for classes, workshops, retreats, and private sessions.",
+    "Rent the studio or fire pit at Dark Horse Healing Lodge in Carp, Ontario. Tiered pricing from 2 hours to full-day, fire pit add-ons, cancellation policy, and online booking with secure Stripe payment.",
 };
 
 type Tier = {
   name: string;
-  tag: string;
+  duration: string;
+  price: string;
+  per: string;
   body: string;
-  rate: string;
-  note?: string;
 };
 
-const TIERS: Tier[] = [
+const STUDIO_TIERS: Tier[] = [
   {
-    name: "Hourly Rental",
-    tag: "For single classes, private sessions, or short workshops.",
-    body: "Perfect for weekly yoga classes, individual Reiki sessions, or short practitioner offerings.",
-    rate: "Contact for current rates",
-    note: "Minimum booking: to be confirmed",
+    name: "2 Hours",
+    duration: "2 hr",
+    price: "$250",
+    per: "CAD",
+    body: "For single classes, private sessions, or short workshops. Two hours is the minimum booking.",
   },
   {
-    name: "Half-Day Rental",
-    tag: "4 hours — ideal for workshops, circles, and group intensives.",
-    body: "A full morning or afternoon to lead a workshop, host a women's or men's circle, or pour a cacao ceremony.",
-    rate: "Contact for current rates",
+    name: "3 Hours",
+    duration: "3 hr",
+    price: "$350",
+    per: "CAD",
+    body: "A solid block for slightly longer workshops, sound baths, or extended ceremonies.",
   },
   {
-    name: "Full-Day Rental",
-    tag: "8 hours — built for retreats, trainings, and multi-session events.",
-    body: "Room to build a full arc of programming. Workshops, trainings, or all-day retreats with breaks built in.",
-    rate: "Contact for current rates",
+    name: "Half-Day",
+    duration: "4 hr",
+    price: "$450",
+    per: "CAD",
+    body: "Ideal for half-day workshops, women's or men's circles, cacao ceremonies, or group intensives.",
   },
   {
-    name: "Multi-Day / Recurring",
-    tag: "Weekly classes, intensives, or multi-day trainings.",
-    body: "Running a weekly class or a multi-day training? Custom rates are available for ongoing and recurring bookings.",
-    rate: "Contact for details",
+    name: "Full Day",
+    duration: "8 hr",
+    price: "$825",
+    per: "CAD",
+    body: "Built for retreats, yoga teacher trainings, and multi-session events. Full day from morning to evening.",
+  },
+];
+
+const FIRE_PIT_TIERS: Tier[] = [
+  {
+    name: "2 Hours",
+    duration: "2 hr",
+    price: "$250",
+    per: "CAD",
+    body: "Short outdoor ceremony, drum circle, or evening fire gathering.",
+  },
+  {
+    name: "3 Hours",
+    duration: "3 hr",
+    price: "$350",
+    per: "CAD",
+    body: "Extended evening fire ceremony or facilitated circle.",
+  },
+  {
+    name: "Half-Day",
+    duration: "4 hr",
+    price: "$450",
+    per: "CAD",
+    body: "Half-day outdoor program with time for opening, ceremony, and integration.",
   },
 ];
 
@@ -80,45 +108,183 @@ export default function BookPage() {
         <div className="w-24 h-px bg-gold mx-auto mb-8" />
         <p className="text-cream/85 text-lg leading-[1.85] font-light">
           Renting Dark Horse Healing Lodge is straightforward. Choose the option
-          that fits your event, book your date, and show up ready to work. The
-          space comes clean, warm, and set up for you.
+          that fits your event, book your date online, pay securely through
+          Stripe, and show up ready to work. The space comes clean, warm, and
+          set up for you.
         </p>
+        <div className="mt-10">
+          <LinkButton href="#book" variant="primary">
+            Jump to Booking Calendar
+          </LinkButton>
+        </div>
       </section>
 
-      {/* TIERS */}
+      {/* STUDIO RENTAL TIERS */}
       <section className="bg-charcoal-light border-y border-gold/15 py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {TIERS.map((tier) => (
+          <div className="text-center mb-12">
+            <p className="font-script text-gold text-3xl sm:text-4xl mb-2">
+              912 sq ft of open studio.
+            </p>
+            <h2 className="font-serif text-cream text-3xl sm:text-4xl uppercase tracking-[0.15em]">
+              Studio Rental
+            </h2>
+            <div className="w-24 h-px bg-gold mx-auto mt-5" />
+            <p className="text-cream/75 text-base mt-6 max-w-2xl mx-auto">
+              The full 912-square-foot studio with reclaimed wood, wall
+              sconces, natural light, and capacity for ~25–30 yoga mats or up
+              to 40 seated.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {STUDIO_TIERS.map((tier) => (
               <div
                 key={tier.name}
-                className="bg-charcoal border border-gold/20 p-8 flex flex-col"
+                className="bg-charcoal border border-gold/20 p-6 flex flex-col"
               >
-                <h3 className="font-serif text-gold text-2xl uppercase tracking-[0.15em] mb-3">
+                <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">
+                  {tier.duration}
+                </p>
+                <h3 className="font-serif text-cream text-2xl uppercase tracking-[0.1em] mb-4">
                   {tier.name}
                 </h3>
-                <p className="text-cream/90 text-sm italic mb-4">{tier.tag}</p>
-                <p className="text-cream/75 text-sm leading-relaxed mb-6 flex-grow">
+                <p className="font-serif text-gold text-3xl mb-1">
+                  {tier.price}
+                </p>
+                <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
+                  {tier.per}
+                </p>
+                <p className="text-cream/75 text-sm leading-relaxed flex-grow">
                   {tier.body}
                 </p>
-                <div className="border-t border-gold/20 pt-4">
-                  <p className="font-serif text-cream text-lg uppercase tracking-wider">
-                    {tier.rate}
-                  </p>
-                  {tier.note && (
-                    <p className="text-cream/60 text-xs italic mt-1">
-                      {tier.note}
-                    </p>
-                  )}
-                </div>
               </div>
             ))}
+          </div>
+
+          <p className="text-cream/60 text-sm italic text-center mt-8">
+            Need 5, 6, or 7 hours? Add extra hours at $100 each at checkout
+            (max +4). Two-hour minimum booking.
+          </p>
+        </div>
+      </section>
+
+      {/* FIRE PIT RENTAL TIERS */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="font-script text-gold text-3xl sm:text-4xl mb-2">
+              Around the sacred fire.
+            </p>
+            <h2 className="font-serif text-cream text-3xl sm:text-4xl uppercase tracking-[0.15em]">
+              Fire Pit Rental
+            </h2>
+            <div className="w-24 h-px bg-gold mx-auto mt-5" />
+            <p className="text-cream/75 text-base mt-6 max-w-2xl mx-auto">
+              Standalone outdoor fire pit rental for ceremony, drum circles,
+              women&rsquo;s or men&rsquo;s circles, or any outdoor healing
+              gathering.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+            {FIRE_PIT_TIERS.map((tier) => (
+              <div
+                key={tier.name}
+                className="bg-charcoal-light border border-gold/20 p-6 flex flex-col"
+              >
+                <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">
+                  {tier.duration}
+                </p>
+                <h3 className="font-serif text-cream text-2xl uppercase tracking-[0.1em] mb-4">
+                  {tier.name}
+                </h3>
+                <p className="font-serif text-gold text-3xl mb-1">
+                  {tier.price}
+                </p>
+                <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
+                  {tier.per}
+                </p>
+                <p className="text-cream/75 text-sm leading-relaxed flex-grow">
+                  {tier.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Burn ban notice */}
+          <div className="max-w-3xl mx-auto mt-10 bg-charcoal-light border border-gold/30 p-6">
+            <p className="font-serif text-gold text-sm uppercase tracking-[0.15em] mb-3">
+              Important &mdash; City of Ottawa burn ban policy
+            </p>
+            <p className="text-cream/80 text-sm leading-relaxed">
+              Fire pit bookings are subject to City of Ottawa burn ban policy.
+              If a burn ban is in effect on your event date, your booking will
+              be cancelled with a full refund or rescheduled at no charge.
+              Please check{" "}
+              <a
+                href="https://ottawa.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold hover:underline"
+              >
+                ottawa.ca
+              </a>{" "}
+              for current burn ban status before your event. Fire pit bookings
+              are reviewed manually before final confirmation &mdash; expect a
+              follow-up confirmation email.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FIRE PIT ADD-ONS (when booking studio) */}
+      <section className="bg-charcoal-light border-y border-gold/15 py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-cream text-3xl uppercase tracking-[0.15em]">
+              Add the Fire Pit to Your Studio Rental
+            </h2>
+            <div className="w-24 h-px bg-gold mx-auto mt-5" />
+            <p className="text-cream/75 text-base mt-6 max-w-2xl mx-auto">
+              Hosting an event in the studio? Add fire pit access for an
+              outdoor ceremony component during your booked time.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-charcoal border border-gold/20 p-8">
+              <h3 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-3">
+                Fire Pit &mdash; BYO Wood
+              </h3>
+              <p className="font-serif text-cream text-3xl mb-1">+ $75</p>
+              <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
+                CAD add-on
+              </p>
+              <p className="text-cream/75 text-sm leading-relaxed">
+                Bring your own wood, handle setup and cleanup yourself. We
+                prepare the pit safely beforehand.
+              </p>
+            </div>
+            <div className="bg-charcoal border border-gold/20 p-8">
+              <h3 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-3">
+                Fire Pit &mdash; Full Service
+              </h3>
+              <p className="font-serif text-cream text-3xl mb-1">+ $150</p>
+              <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
+                CAD add-on
+              </p>
+              <p className="text-cream/75 text-sm leading-relaxed">
+                We supply the wood, set up and light the fire, and handle all
+                cleanup. Just show up.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* INCLUDED + BRING */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
+      <section className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
           <div>
             <h2 className="font-serif text-gold text-2xl uppercase tracking-[0.15em] mb-6 pb-3 border-b border-gold/30">
@@ -129,8 +295,7 @@ export default function BookPage() {
               the welcome area and boot room, both restrooms, and on-site
               parking. The kitchenette is stocked with a fridge, microwave,
               Keurig, kettle, and potable water with water coolers. High-speed
-              Wi-Fi is available for all hosts. Outdoor space and fire pit
-              access can be added to any booking.
+              Wi-Fi is available for all hosts.
             </p>
           </div>
           <div>
@@ -147,31 +312,154 @@ export default function BookPage() {
         </div>
       </section>
 
-      {/* BOOKING + PAYMENT */}
-      <section className="max-w-3xl mx-auto px-6 pb-24">
-        <div className="bg-charcoal-light border border-gold/20 p-10 text-center">
-          <h2 className="font-serif text-cream text-2xl uppercase tracking-[0.15em] mb-4">
-            Booking and Payment
+      {/* INSURANCE */}
+      <section className="bg-charcoal-light border-y border-gold/15 py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="font-serif text-cream text-3xl uppercase tracking-[0.15em] mb-4 text-center">
+            Liability Insurance
           </h2>
-          <div className="w-16 h-px bg-gold mx-auto mb-6" />
-          <p className="text-cream/85 text-base leading-relaxed mb-4">
-            Browse available dates and times on our Events page. Select your
-            rental window, complete the booking form, and pay securely through
-            Stripe. You will receive a confirmation email with everything you
-            need to know before your session.
-          </p>
-          <p className="text-cream/70 text-sm italic mb-10">
-            For custom bookings, multi-day events, or questions about the
-            space, reach out directly through the Contact page.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <LinkButton href="/events" variant="primary">
-              Check Availability
-            </LinkButton>
-            <LinkButton href="/contact" variant="secondary">
-              Contact Us
-            </LinkButton>
+          <div className="w-24 h-px bg-gold mx-auto mb-10" />
+
+          <div className="space-y-6 text-cream/85 text-base leading-[1.85] font-light">
+            <p>
+              All rentals require event or professional liability insurance
+              with{" "}
+              <span className="text-gold italic">Dark Horse Healing Lodge</span>{" "}
+              listed as additional insured. This protects both you and the
+              lodge in the event of an incident during your event.
+            </p>
+            <div className="bg-charcoal border border-gold/30 p-6 my-8">
+              <p className="font-serif text-gold text-sm uppercase tracking-[0.15em] mb-2">
+                $50 Insurance Discount
+              </p>
+              <p className="text-cream/85 text-base leading-relaxed">
+                Have current liability coverage? Apply coupon code{" "}
+                <span className="font-mono bg-charcoal-light px-2 py-1 text-gold">
+                  INSURANCE50
+                </span>{" "}
+                at checkout to take $50 off your booking. After booking,
+                we&rsquo;ll email you with who to add as additional insured on
+                your existing policy.
+              </p>
+            </div>
+            <p>
+              Don&rsquo;t have insurance yet? Single-event policies typically
+              run $25&ndash;$50 from providers like Athletes Insurance,
+              Apollo, or your existing professional liability carrier (if
+              you&rsquo;re a yoga teacher, Reiki practitioner, or other
+              certified facilitator). Reach out and we can point you to
+              affordable options.
+            </p>
           </div>
+        </div>
+      </section>
+
+      {/* CANCELLATION POLICY */}
+      <section className="max-w-4xl mx-auto px-6 py-20">
+        <h2 className="font-serif text-cream text-3xl uppercase tracking-[0.15em] mb-4 text-center">
+          Cancellation Policy
+        </h2>
+        <div className="w-24 h-px bg-gold mx-auto mb-10" />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+          <div className="bg-charcoal-light border border-gold/20 p-6 text-center">
+            <p className="font-serif text-gold text-sm uppercase tracking-[0.15em] mb-3">
+              7+ days before
+            </p>
+            <p className="font-serif text-cream text-2xl uppercase mb-2">
+              Full refund
+            </p>
+            <p className="text-cream/70 text-sm">
+              Cancel a week or more in advance and receive a 100% refund.
+            </p>
+          </div>
+          <div className="bg-charcoal-light border border-gold/20 p-6 text-center">
+            <p className="font-serif text-gold text-sm uppercase tracking-[0.15em] mb-3">
+              3 to 7 days before
+            </p>
+            <p className="font-serif text-cream text-2xl uppercase mb-2">
+              50% refund
+            </p>
+            <p className="text-cream/70 text-sm">
+              Half of your booking total returned to your card.
+            </p>
+          </div>
+          <div className="bg-charcoal-light border border-gold/20 p-6 text-center">
+            <p className="font-serif text-gold text-sm uppercase tracking-[0.15em] mb-3">
+              Less than 72 hours
+            </p>
+            <p className="font-serif text-cream text-2xl uppercase mb-2">
+              No refund
+            </p>
+            <p className="text-cream/70 text-sm">
+              Full booking and security deposit are forfeited.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-charcoal-light border border-gold/20 p-6 text-cream/80 text-sm leading-relaxed">
+          <p className="mb-3">
+            <span className="font-serif text-gold uppercase tracking-[0.15em]">
+              Security deposit:
+            </span>{" "}
+            A refundable security deposit of $250&ndash;$500 (depending on
+            event size and risk profile) is held separately at booking and
+            released within 7 business days post-event, minus any damages or
+            extra cleaning charges.
+          </p>
+          <p>
+            <span className="font-serif text-gold uppercase tracking-[0.15em]">
+              Cleaning fee:
+            </span>{" "}
+            A $50 cleaning fee may be charged post-event only if the space
+            requires more than standard turnover cleaning. Most renters never
+            see this fee.
+          </p>
+        </div>
+      </section>
+
+      {/* BOOKING WIDGET EMBED */}
+      <section id="book" className="bg-charcoal-light border-y border-gold/15 py-20 scroll-mt-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <p className="font-script text-gold text-3xl sm:text-5xl mb-3">
+              Pick a date.
+            </p>
+            <h2 className="font-serif text-cream text-3xl sm:text-4xl uppercase tracking-[0.15em]">
+              Book Your Time
+            </h2>
+            <div className="w-24 h-px bg-gold mx-auto mt-6" />
+            <p className="text-cream/80 text-base leading-relaxed max-w-2xl mx-auto mt-6">
+              Browse availability, choose your rental window, and pay securely
+              through Stripe. Bookings can be made starting tomorrow up to 1
+              year in advance. You&rsquo;ll receive instant email confirmation.
+            </p>
+          </div>
+
+          <SimplyBookEmbed variant="iframe" />
+        </div>
+      </section>
+
+      {/* BOTTOM CTA */}
+      <section className="max-w-3xl mx-auto px-6 py-24 text-center">
+        <p className="font-script text-gold text-3xl sm:text-5xl mb-4">
+          Questions?
+        </p>
+        <h2 className="font-serif text-cream text-2xl sm:text-3xl uppercase tracking-[0.15em] mb-6">
+          Talk to us first.
+        </h2>
+        <p className="text-cream/80 text-base md:text-lg leading-relaxed mb-10">
+          Custom multi-day events, recurring weekly bookings, large retreats,
+          or anything that doesn&rsquo;t fit the standard tiers above &mdash;
+          reach out and we&rsquo;ll work it out together.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <LinkButton href="/contact" variant="primary">
+            Contact Us
+          </LinkButton>
+          <LinkButton href="/about" variant="secondary">
+            About the Space
+          </LinkButton>
         </div>
       </section>
     </>

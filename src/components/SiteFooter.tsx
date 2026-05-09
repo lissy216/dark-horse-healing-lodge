@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 const CONTACT_EMAIL = "hello@darkhorsehealinglodge.com";
+const CONTACT_PHONE = "(613) 608-3048";
+const CONTACT_PHONE_TEL = "+16136083048";
 const ADDRESS_LINE_1 = "2206 Upper Dwyer Hill Road";
 const ADDRESS_LINE_2 = "Carp, ON K0A 1L0";
 
@@ -78,6 +80,14 @@ export function SiteFooter() {
                   className="hover:text-gold transition-colors"
                 >
                   {CONTACT_EMAIL}
+                </a>
+              </p>
+              <p className="pt-1">
+                <a
+                  href={`tel:${CONTACT_PHONE_TEL}`}
+                  className="hover:text-gold transition-colors"
+                >
+                  {CONTACT_PHONE}
                 </a>
               </p>
               <p className="text-cream/50 text-xs pt-3 italic">

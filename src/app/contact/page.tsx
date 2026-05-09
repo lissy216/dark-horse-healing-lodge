@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 
 const ADDRESS = "2206 Upper Dwyer Hill Road, Carp, ON K0A 1L0";
 const CONTACT_EMAIL = "hello@darkhorsehealinglodge.com";
+const CONTACT_PHONE = "(613) 608-3048";
+const CONTACT_PHONE_TEL = "+16136083048";
 
 export default function ContactPage() {
   const mapQuery = encodeURIComponent(ADDRESS);
@@ -66,6 +68,18 @@ export default function ContactPage() {
                 className="text-cream hover:text-gold transition-colors text-base break-all"
               >
                 {CONTACT_EMAIL}
+              </a>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-4 pb-3 border-b border-gold/30">
+                Call or Text
+              </h2>
+              <a
+                href={`tel:${CONTACT_PHONE_TEL}`}
+                className="text-cream hover:text-gold transition-colors text-base"
+              >
+                {CONTACT_PHONE}
               </a>
             </div>
 
