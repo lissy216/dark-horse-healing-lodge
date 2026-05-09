@@ -126,7 +126,8 @@ export default function EventsPage() {
               </a>{" "}
               page. Have insurance? Apply coupon code{" "}
               <span className="font-mono text-gold">INSURANCE50</span> at
-              checkout for a $50 discount.
+              checkout for a $50 discount. All prices add 13% Ontario HST at
+              checkout.
             </p>
           </div>
 

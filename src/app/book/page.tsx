@@ -112,6 +112,9 @@ export default function BookPage() {
           Stripe, and show up ready to work. The space comes clean, warm, and
           set up for you.
         </p>
+        <p className="text-cream/65 text-sm italic mt-6">
+          All prices in Canadian dollars. 13% Ontario HST added at checkout.
+        </p>
         <div className="mt-10">
           <LinkButton href="#book" variant="primary">
             Jump to Booking Calendar
@@ -153,7 +156,7 @@ export default function BookPage() {
                   {tier.price}
                 </p>
                 <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
-                  {tier.per}
+                  {tier.per} + HST
                 </p>
                 <p className="text-cream/75 text-sm leading-relaxed flex-grow">
                   {tier.body}
@@ -163,8 +166,11 @@ export default function BookPage() {
           </div>
 
           <p className="text-cream/60 text-sm italic text-center mt-8">
-            Need 5, 6, or 7 hours? Add extra hours at $100 each at checkout
-            (max +4). Two-hour minimum booking.
+            Need 5, 6, or 7 hours? Add extra hours at $100 + HST each at
+            checkout (max +4). Two-hour minimum booking.
+          </p>
+          <p className="text-cream/50 text-xs italic text-center mt-2">
+            All prices in CAD. 13% Ontario HST is added at checkout.
           </p>
         </div>
       </section>
@@ -203,7 +209,7 @@ export default function BookPage() {
                   {tier.price}
                 </p>
                 <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
-                  {tier.per}
+                  {tier.per} + HST
                 </p>
                 <p className="text-cream/75 text-sm leading-relaxed flex-grow">
                   {tier.body}
@@ -259,7 +265,7 @@ export default function BookPage() {
               </h3>
               <p className="font-serif text-cream text-3xl mb-1">+ $75</p>
               <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
-                CAD add-on
+                CAD add-on + HST
               </p>
               <p className="text-cream/75 text-sm leading-relaxed">
                 Bring your own wood, handle setup and cleanup yourself. We
@@ -272,7 +278,7 @@ export default function BookPage() {
               </h3>
               <p className="font-serif text-cream text-3xl mb-1">+ $150</p>
               <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
-                CAD add-on
+                CAD add-on + HST
               </p>
               <p className="text-cream/75 text-sm leading-relaxed">
                 We supply the wood, set up and light the fire, and handle all
