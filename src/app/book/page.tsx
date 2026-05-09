@@ -424,6 +424,181 @@ export default function BookPage() {
         </div>
       </section>
 
+      {/* HOUSE RULES & BY-LAW COMPLIANCE */}
+      <section className="bg-charcoal-light border-y border-gold/15 py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="font-serif text-cream text-3xl uppercase tracking-[0.15em] mb-4 text-center">
+            House Rules &amp; By-law Compliance
+          </h2>
+          <div className="w-24 h-px bg-gold mx-auto mb-8" />
+
+          <p className="text-cream/85 text-base leading-relaxed text-center max-w-3xl mx-auto mb-12">
+            Dark Horse Healing Lodge is a rural commercial venue (Ottawa
+            Zoning RC9) on a property surrounded by neighbours and natural
+            land. Every booking includes acknowledgement of the rules below
+            &mdash; they protect you, your guests, our neighbours, and the
+            property.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            {/* Sound */}
+            <div className="bg-charcoal border border-gold/20 p-7">
+              <h3 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-4 pb-3 border-b border-gold/30">
+                Sound &amp; Quiet Hours
+              </h3>
+              <ul className="space-y-3 text-cream/80 text-sm leading-relaxed">
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>Indoor amplified sound until 11 PM</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Outdoor amplified sound (drumming, kirtan, sound
+                    healing, fire ceremony) ends by 10 PM
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>All events fully wrapped by midnight</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Quiet arrival and departure &mdash; sound carries in the
+                    rural neighbourhood
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Property */}
+            <div className="bg-charcoal border border-gold/20 p-7">
+              <h3 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-4 pb-3 border-b border-gold/30">
+                Property Use
+              </h3>
+              <ul className="space-y-3 text-cream/80 text-sm leading-relaxed">
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Maximum 40 attendees total (Ontario Building Code
+                    occupancy limit)
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    All vehicles in the lodge parking area &mdash; no
+                    parking on Upper Dwyer Hill Road
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Service animals welcome; pets are not permitted
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Renter is responsible for the conduct of all guests
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Substances */}
+            <div className="bg-charcoal border border-gold/20 p-7">
+              <h3 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-4 pb-3 border-b border-gold/30">
+                Substances
+              </h3>
+              <ul className="space-y-3 text-cream/80 text-sm leading-relaxed">
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Smoke-free, vape-free property (tobacco and cannabis,
+                    all forms)
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Alcohol service requires a valid AGCO Special Occasion
+                    Permit, copied to the lodge before the event
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Renters and guests are responsible for compliance with
+                    all provincial and federal substance regulations
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Fire Pit */}
+            <div className="bg-charcoal border border-gold/20 p-7">
+              <h3 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-4 pb-3 border-b border-gold/30">
+                Fire Pit Use
+              </h3>
+              <ul className="space-y-3 text-cream/80 text-sm leading-relaxed">
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Subject to City of Ottawa burn ban policy &mdash; full
+                    refund or reschedule if active
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Adult supervision required at all times when the fire
+                    is lit
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Fire must be fully extinguished before guests leave
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold mt-1 flex-shrink-0">&bull;</span>
+                  <span>
+                    Fire pit bookings are reviewed and approved manually
+                    before final confirmation
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Compliance statement */}
+          <div className="bg-charcoal border border-gold/30 p-7 text-cream/80 text-sm leading-relaxed">
+            <p className="mb-3">
+              <span className="font-serif text-gold uppercase tracking-[0.15em]">
+                Renter responsibility:
+              </span>{" "}
+              Renters are responsible for their own compliance and the
+              compliance of their guests with applicable City of Ottawa
+              by-laws (including but not limited to the Noise By-law
+              2017-180, Smoking and Vaping By-law 2018-263, and Open Air
+              Fire By-law) as well as Ontario provincial regulations (AGCO
+              permitting, Public Health, accessibility, etc.).
+            </p>
+            <p>
+              <span className="font-serif text-gold uppercase tracking-[0.15em]">
+                Termination:
+              </span>{" "}
+              Dark Horse Healing Lodge reserves the right to terminate any
+              booking that violates these rules, with no refund of the
+              rental fee or security deposit.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* BOOKING WIDGET EMBED */}
       <section id="book" className="bg-charcoal-light border-y border-gold/15 py-20 scroll-mt-20">
         <div className="max-w-5xl mx-auto px-6">
