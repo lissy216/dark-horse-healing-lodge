@@ -75,17 +75,18 @@ const FIRE_PIT_TIERS: Tier[] = [
 export default function BookPage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative h-[60vh] min-h-[440px] w-full overflow-hidden">
+      {/* HERO — uses hero-banner.jpg (the only full-resolution image source we have) */}
+      <section className="relative h-[55vh] min-h-[400px] w-full overflow-hidden">
         <Image
-          src="/images/studio-main.jpg"
+          src="/images/hero-banner.jpg"
           alt=""
           fill
           priority
+          quality={90}
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-charcoal/70" />
+        <div className="absolute inset-0 bg-charcoal/75" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
           <p className="font-script text-gold text-3xl sm:text-5xl mb-4">
             Your space.

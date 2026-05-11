@@ -12,12 +12,13 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
+      <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
         <Image
           src="/images/horse-portrait.jpg"
           alt="Close-up portrait of a dark horse in moody natural light"
           fill
           priority
+          quality={90}
           className="object-cover object-center"
           sizes="100vw"
         />
@@ -141,25 +142,29 @@ export default function AboutPage() {
         </p>
       </section>
 
-      {/* GROUNDS IMAGE STRIP */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        <div className="relative aspect-[4/3]">
-          <Image
-            src="/images/grounds-pine-grove.jpg"
-            alt="Pine grove walkway with tall pines and dappled sunlight at Dark Horse Healing Lodge"
-            fill
-            className="object-cover"
-            sizes="(min-width: 768px) 50vw, 100vw"
-          />
-        </div>
-        <div className="relative aspect-[4/3]">
-          <Image
-            src="/images/studio-main.jpg"
-            alt="The main studio at Dark Horse Healing Lodge with wall sconces lit and meditation cushions"
-            fill
-            className="object-cover"
-            sizes="(min-width: 768px) 50vw, 100vw"
-          />
+      {/* GROUNDS IMAGE STRIP — sized close to 206x206 source to avoid upscaling */}
+      <section className="max-w-3xl mx-auto px-6 pb-8">
+        <div className="grid grid-cols-2 gap-3">
+          <div className="relative aspect-square border border-gold/20 overflow-hidden">
+            <Image
+              src="/images/grounds-pine-grove.jpg"
+              alt="Pine grove walkway with tall pines and dappled sunlight at Dark Horse Healing Lodge"
+              fill
+              quality={90}
+              className="object-cover"
+              sizes="(min-width: 640px) 360px, 45vw"
+            />
+          </div>
+          <div className="relative aspect-square border border-gold/20 overflow-hidden">
+            <Image
+              src="/images/studio-main.jpg"
+              alt="The main studio at Dark Horse Healing Lodge with wall sconces lit and meditation cushions"
+              fill
+              quality={90}
+              className="object-cover"
+              sizes="(min-width: 640px) 360px, 45vw"
+            />
+          </div>
         </div>
       </section>
 

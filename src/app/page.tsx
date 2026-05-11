@@ -97,9 +97,9 @@ export default function HomePage() {
         </section>
       </ScrollReveal>
 
-      {/* FEATURED SPACES */}
+      {/* FEATURED SPACES — container constrained so cards stay near 206px source resolution */}
       <ScrollReveal>
-        <section className="max-w-7xl mx-auto px-6 py-24">
+        <section className="max-w-5xl mx-auto px-6 py-24">
           <div className="text-center mb-16">
             <p className="font-script text-gold text-3xl sm:text-4xl mb-3">
               A closer look
@@ -214,7 +214,7 @@ function FeaturedCard({
     >
       <div
         className="
-          relative aspect-[4/3] overflow-hidden mb-5
+          relative aspect-square overflow-hidden mb-5
           border border-gold/20
           shadow-none
           transition-[border-color,box-shadow] duration-500 ease-out
@@ -226,8 +226,9 @@ function FeaturedCard({
           src={src}
           alt={alt}
           fill
+          quality={90}
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-          sizes="(min-width: 768px) 33vw, 100vw"
+          sizes="(min-width: 1024px) 280px, (min-width: 768px) 33vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent transition-opacity duration-500 group-hover:opacity-70" />
       </div>

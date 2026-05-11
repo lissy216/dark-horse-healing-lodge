@@ -66,7 +66,7 @@ export function GalleryGrid({ sections }: { sections: GallerySection[] }) {
             <div className="w-24 h-px bg-gold mt-5" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
             {section.images.map((img) => (
               <button
                 key={img.src}
@@ -79,8 +79,9 @@ export function GalleryGrid({ sections }: { sections: GallerySection[] }) {
                   src={img.src}
                   alt={img.alt}
                   fill
+                  quality={90}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+                  sizes="(min-width: 1024px) 180px, (min-width: 768px) 200px, (min-width: 640px) 25vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-charcoal/0 transition-colors" />
               </button>
@@ -128,13 +129,14 @@ export function GalleryGrid({ sections }: { sections: GallerySection[] }) {
             &#8250;
           </button>
           <div
-            className="relative w-full h-full max-w-6xl max-h-[85vh]"
+            className="relative w-full h-full max-w-md sm:max-w-lg max-h-[70vh]"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={allImages[lightboxIndex].src}
               alt={allImages[lightboxIndex].alt}
               fill
+              quality={90}
               className="object-contain"
               sizes="100vw"
               priority
