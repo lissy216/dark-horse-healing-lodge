@@ -123,6 +123,148 @@ export default function BookPage() {
         </div>
       </section>
 
+      {/* WHY DARK HORSE */}
+      <section className="bg-charcoal-light border-y border-gold/15 py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="font-script text-gold text-3xl sm:text-4xl mb-2">
+              What sets us apart.
+            </p>
+            <h2 className="font-serif text-cream text-3xl sm:text-4xl uppercase tracking-[0.15em]">
+              Why Dark Horse
+            </h2>
+            <div className="w-24 h-px bg-gold mx-auto mt-5" />
+            <p className="text-cream/75 text-base mt-6 max-w-2xl mx-auto">
+              Built from the ground up for healing practitioners. Here&rsquo;s
+              what makes this space different from other venues you might be
+              considering.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <WhyCard
+              title="Intimate by Design"
+              body="We host one event at a time. Full property, full privacy, full attention on your work. No other group sharing the grounds, no parallel events, no competing energy."
+              accent
+            />
+            <WhyCard
+              title="Instant Online Booking"
+              body="Browse availability and confirm your date in minutes. Secure Stripe checkout, instant email confirmation, no back-and-forth required."
+            />
+            <WhyCard
+              title="Flexible 2-Hour Minimum"
+              body="Most venues require half- or full-day commitments. We start at two hours so your single class, sound bath, or workshop fits without paying for time you don&rsquo;t need."
+            />
+            <WhyCard
+              title="All Traditions Welcome"
+              body="Yoga, Reiki, breathwork, sound healing, kirtan, cacao, women&rsquo;s and men&rsquo;s circles, drum circles, somatic work. If your practice is rooted in healing and consciousness, this space was built for you."
+            />
+            <WhyCard
+              title="Insurance-Friendly"
+              body="We accept your existing professional or event liability policy &mdash; just add us as additional insured. $50 off with coupon INSURANCE50 if you already have coverage."
+            />
+            <WhyCard
+              title="Sacred Fire Pits"
+              body="Two outdoor fire pits for ceremony, drum circles, and land-based healing. Add a fire pit to any studio rental, or book the pit standalone for outdoor programming."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* COMMUNITY ACCESS / TIERED PRICING */}
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="font-script text-gold text-3xl sm:text-4xl mb-2">
+              Healing should be accessible.
+            </p>
+            <h2 className="font-serif text-cream text-3xl sm:text-4xl uppercase tracking-[0.15em]">
+              Community Access Pricing
+            </h2>
+            <div className="w-24 h-px bg-gold mx-auto mt-5" />
+            <p className="text-cream/75 text-base mt-6 max-w-2xl mx-auto">
+              Standard rates apply to most renters. Discounted rates are
+              available for registered community organizations and Indigenous
+              practitioners and groups.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="bg-charcoal-light border border-gold/20 p-7 flex flex-col">
+              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">
+                Tier 1
+              </p>
+              <h3 className="font-serif text-cream text-2xl uppercase tracking-[0.1em] mb-3">
+                Standard
+              </h3>
+              <p className="font-serif text-gold text-3xl mb-1">Full Rate</p>
+              <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
+                Individual practitioners &amp; commercial events
+              </p>
+              <p className="text-cream/75 text-sm leading-relaxed flex-grow">
+                Standard rates as listed above. Applies to most bookings &mdash;
+                practitioners, workshops, retreats, and private events.
+              </p>
+            </div>
+
+            <div className="bg-charcoal-light border border-gold/30 p-7 flex flex-col">
+              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">
+                Tier 2
+              </p>
+              <h3 className="font-serif text-cream text-2xl uppercase tracking-[0.1em] mb-3">
+                Community
+              </h3>
+              <p className="font-serif text-gold text-3xl mb-1">20% off</p>
+              <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
+                Registered charities &amp; community groups
+              </p>
+              <p className="text-cream/75 text-sm leading-relaxed flex-grow mb-4">
+                For registered Canadian charities, not-for-profits, and
+                established community groups running non-commercial gatherings.
+              </p>
+              <p className="text-cream/80 text-xs leading-relaxed">
+                Apply coupon{" "}
+                <span className="font-mono bg-charcoal px-2 py-1 text-gold">
+                  COMMUNITY20
+                </span>{" "}
+                at checkout.
+              </p>
+            </div>
+
+            <div className="bg-charcoal-light border border-gold p-7 flex flex-col">
+              <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">
+                Tier 3
+              </p>
+              <h3 className="font-serif text-cream text-2xl uppercase tracking-[0.1em] mb-3">
+                Indigenous
+              </h3>
+              <p className="font-serif text-gold text-3xl mb-1">30% off</p>
+              <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
+                Indigenous practitioners &amp; First Nations groups
+              </p>
+              <p className="text-cream/75 text-sm leading-relaxed flex-grow mb-4">
+                For Indigenous practitioners, knowledge keepers, and First
+                Nations community organizations honouring this land and its
+                traditions.
+              </p>
+              <p className="text-cream/80 text-xs leading-relaxed">
+                Apply coupon{" "}
+                <span className="font-mono bg-charcoal px-2 py-1 text-gold">
+                  INDIGENOUS30
+                </span>{" "}
+                at checkout.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-cream/60 text-sm italic text-center mt-8 max-w-3xl mx-auto">
+            Eligibility is verified after booking. If you&rsquo;re unsure which
+            tier applies to you, reach out before booking and we&rsquo;ll
+            confirm.
+          </p>
+        </div>
+      </section>
+
       {/* STUDIO RENTAL TIERS */}
       <section className="bg-charcoal-light border-y border-gold/15 py-20">
         <div className="max-w-6xl mx-auto px-6">
@@ -245,21 +387,22 @@ export default function BookPage() {
         </div>
       </section>
 
-      {/* FIRE PIT ADD-ONS (when booking studio) */}
+      {/* ADD-ONS */}
       <section className="bg-charcoal-light border-y border-gold/15 py-20">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-serif text-cream text-3xl uppercase tracking-[0.15em]">
-              Add the Fire Pit to Your Studio Rental
+              Booking Add-Ons
             </h2>
             <div className="w-24 h-px bg-gold mx-auto mt-5" />
             <p className="text-cream/75 text-base mt-6 max-w-2xl mx-auto">
-              Hosting an event in the studio? Add fire pit access for an
-              outdoor ceremony component during your booked time.
+              Optional extras you can add to any studio rental at checkout
+              &mdash; fire pit access for outdoor ceremony, or a dedicated
+              setup day for multi-day events.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-charcoal border border-gold/20 p-8">
               <h3 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-3">
                 Fire Pit &mdash; BYO Wood
@@ -284,6 +427,20 @@ export default function BookPage() {
               <p className="text-cream/75 text-sm leading-relaxed">
                 We supply the wood, set up and light the fire, and handle all
                 cleanup. Just show up.
+              </p>
+            </div>
+            <div className="bg-charcoal border border-gold/20 p-8">
+              <h3 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-3">
+                Setup Day
+              </h3>
+              <p className="font-serif text-cream text-3xl mb-1">+ $200</p>
+              <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
+                CAD add-on + HST
+              </p>
+              <p className="text-cream/75 text-sm leading-relaxed">
+                Need access the day before to set up altars, instruments, or
+                staging for a multi-day retreat? Add a full setup day at half
+                the half-day rate.
               </p>
             </div>
           </div>
@@ -645,5 +802,30 @@ export default function BookPage() {
         </div>
       </section>
     </>
+  );
+}
+
+function WhyCard({
+  title,
+  body,
+  accent = false,
+}: {
+  title: string;
+  body: string;
+  accent?: boolean;
+}) {
+  return (
+    <div
+      className={`bg-charcoal p-7 flex flex-col h-full transition-colors duration-300 ${
+        accent
+          ? "border border-gold hover:border-gold-light"
+          : "border border-gold/20 hover:border-gold"
+      }`}
+    >
+      <h3 className="font-serif text-gold text-xl uppercase tracking-[0.15em] mb-4 pb-3 border-b border-gold/30">
+        {title}
+      </h3>
+      <p className="text-cream/80 text-sm leading-relaxed">{body}</p>
+    </div>
   );
 }
