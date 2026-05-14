@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { LinkButton } from "@/components/Button";
 import { SimplyBookEmbed } from "@/components/SimplyBookEmbed";
@@ -238,29 +239,34 @@ export default function BookPage() {
               <h3 className="font-serif text-cream text-2xl uppercase tracking-[0.1em] mb-3">
                 Indigenous
               </h3>
-              <p className="font-serif text-gold text-3xl mb-1">30% off</p>
+              <p className="font-serif text-gold text-3xl mb-1">
+                By relationship
+              </p>
               <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
                 Indigenous practitioners &amp; First Nations groups
               </p>
               <p className="text-cream/75 text-sm leading-relaxed flex-grow mb-4">
                 For Indigenous practitioners, knowledge keepers, and First
                 Nations community organizations honouring this land and its
-                traditions.
+                traditions, our community access rate is offered relationally
+                rather than through a coupon code.
               </p>
               <p className="text-cream/80 text-xs leading-relaxed">
-                Apply coupon{" "}
-                <span className="font-mono bg-charcoal px-2 py-1 text-gold">
-                  INDIGENOUS30
-                </span>{" "}
-                at checkout.
+                <Link
+                  href="/contact"
+                  className="text-gold hover:text-gold-light underline underline-offset-4 decoration-gold/40 hover:decoration-gold transition-colors"
+                >
+                  Reach out before booking
+                </Link>{" "}
+                &mdash; we&rsquo;d love to connect first.
               </p>
             </div>
           </div>
 
           <p className="text-cream/60 text-sm italic text-center mt-8 max-w-3xl mx-auto">
-            Eligibility is verified after booking. If you&rsquo;re unsure which
-            tier applies to you, reach out before booking and we&rsquo;ll
-            confirm.
+            Community access eligibility is verified after booking. Indigenous
+            access is offered by relationship &mdash; please reach out before
+            booking so we can connect.
           </p>
         </div>
       </section>
