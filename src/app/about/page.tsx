@@ -168,6 +168,27 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* HOSTESSES */}
+      <section className="py-20">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="font-script text-gold text-3xl sm:text-4xl mb-4">
+            With love,
+          </p>
+          <h2 className="font-serif text-cream text-2xl sm:text-3xl uppercase tracking-[0.15em] mb-6">
+            Your Hostesses
+          </h2>
+          <div className="w-24 h-px bg-gold mx-auto mb-8" />
+          <p className="font-serif text-cream text-3xl sm:text-4xl tracking-[0.05em]">
+            KJ, Angel &amp; Flower
+          </p>
+          <p className="text-cream/70 text-base leading-relaxed mt-8 max-w-xl mx-auto">
+            Dark Horse Healing Lodge is held by family. You&rsquo;ll be
+            welcomed, seen, and supported by people who love this land and
+            this work.
+          </p>
+        </div>
+      </section>
+
       {/* CLOSING CTA */}
       <section className="py-24 text-center">
         <div className="max-w-3xl mx-auto px-6">
