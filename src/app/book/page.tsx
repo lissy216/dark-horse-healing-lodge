@@ -22,28 +22,28 @@ const STUDIO_TIERS: Tier[] = [
   {
     name: "2 Hours",
     duration: "2 hr",
-    price: "$195",
+    price: "$149",
     per: "CAD",
     body: "For single classes, private sessions, or short workshops. Two hours is the minimum booking.",
   },
   {
     name: "3 Hours",
     duration: "3 hr",
-    price: "$285",
+    price: "$219",
     per: "CAD",
     body: "A solid block for slightly longer workshops, sound baths, or extended ceremonies.",
   },
   {
     name: "Half-Day",
     duration: "4 hr",
-    price: "$395",
+    price: "$299",
     per: "CAD",
     body: "Ideal for half-day workshops, women's or men's circles, cacao ceremonies, or group intensives.",
   },
   {
     name: "Full Day",
     duration: "8 hr",
-    price: "$725",
+    price: "$550",
     per: "CAD",
     body: "Built for retreats, yoga teacher trainings, and multi-session events. Full day from morning to evening.",
   },
@@ -315,7 +315,7 @@ export default function BookPage() {
           </div>
 
           <p className="text-cream/60 text-sm italic text-center mt-8">
-            Need 5, 6, or 7 hours? Add extra hours at $85 + HST each at
+            Need 5, 6, or 7 hours? Add extra hours at $65 + HST each at
             checkout (max +4). Two-hour minimum booking.
           </p>
           <p className="text-cream/50 text-xs italic text-center mt-2">
@@ -445,8 +445,8 @@ export default function BookPage() {
               </p>
               <p className="text-cream/75 text-sm leading-relaxed">
                 Need access the day before to set up altars, instruments, or
-                staging for a multi-day retreat? Add a full setup day at half
-                the half-day rate.
+                staging for a multi-day retreat? Add a full setup day to your
+                booking.
               </p>
             </div>
           </div>
