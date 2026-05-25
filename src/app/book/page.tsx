@@ -289,6 +289,17 @@ export default function BookPage() {
             </p>
           </div>
 
+          {/* INTRO RATES BADGE */}
+          <div className="max-w-2xl mx-auto mb-10 border border-gold/40 bg-charcoal/40 px-6 py-4 text-center">
+            <p className="font-script text-gold text-2xl sm:text-3xl mb-1">
+              Founding-summer rates.
+            </p>
+            <p className="text-cream/75 text-sm leading-relaxed">
+              We&rsquo;re welcoming our first season of renters at
+              introductory pricing. Subject to seasonal review.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {STUDIO_TIERS.map((tier) => (
               <div
