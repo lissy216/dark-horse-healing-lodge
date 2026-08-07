@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import { LinkButton } from "@/components/Button";
 import { BookingInquiryForm } from "@/components/BookingInquiryForm";
 import { EventCheckoutButton } from "@/components/EventCheckoutButton";
-import { SimplyBookEmbed } from "@/components/SimplyBookEmbed";
 
 export const metadata: Metadata = {
   title: "Events & Calendar",
   description:
-    "Book the studio or fire pit at Dark Horse Healing Lodge. Real-time availability, secure Stripe payment, and instant confirmation. Plus custom inquiries for multi-day events and recurring bookings.",
+    "Book the studio or fire pit at Dark Horse Healing Lodge. Email us or send a booking inquiry for classes, workshops, ceremonies, multi-day events, and recurring bookings.",
 };
 
 // Placeholder event data — swap with CMS or database when event management is live.
@@ -98,7 +97,7 @@ export default function EventsPage() {
         )}
       </section>
 
-      {/* SECTION 2 — BOOK THE SPACE (PRIMARY: SIMPLYBOOK EMBED) */}
+      {/* SECTION 2 — BOOK THE SPACE */}
       <section
         id="book"
         className="bg-charcoal-light border-y border-gold/15 py-20 scroll-mt-20"
@@ -106,7 +105,7 @@ export default function EventsPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="mb-10">
             <p className="font-script text-gold text-3xl sm:text-4xl mb-3">
-              Pick a date.
+              Host your offering here.
             </p>
             <h2 className="font-serif text-cream text-3xl sm:text-4xl uppercase tracking-[0.15em]">
               Book the Space
@@ -115,8 +114,9 @@ export default function EventsPage() {
             <p className="text-cream/80 text-base leading-relaxed max-w-2xl mt-6">
               For yoga teachers, healers, facilitators, ceremony holders, and
               anyone whose work is rooted in healing and consciousness. All
-              traditions and modalities are welcome. Book online, pay
-              securely through Stripe, and receive instant email confirmation.
+              traditions and modalities are welcome. Send us a booking
+              inquiry using the form below and we&rsquo;ll reply within one
+              business day to confirm your date.
             </p>
             <p className="text-cream/60 text-sm italic mt-3">
               Pricing, add-ons, cancellation policy, and insurance details
@@ -124,29 +124,34 @@ export default function EventsPage() {
               <a href="/book" className="text-gold hover:underline">
                 Book / Rental Info
               </a>{" "}
-              page. Have insurance? Apply coupon code{" "}
-              <span className="font-mono text-gold">INSURANCE50</span> at
-              checkout for a $50 discount. All prices add 13% Ontario HST at
-              checkout.
+              page. Have liability insurance? Mention it in your inquiry for
+              a $50 discount. All prices are in CAD plus 13% Ontario HST.
             </p>
           </div>
 
-          <SimplyBookEmbed variant="iframe" />
+          <div className="flex flex-col sm:flex-row gap-4">
+            <LinkButton href="/book" variant="primary">
+              View Pricing &amp; Rental Info
+            </LinkButton>
+            <LinkButton href="#inquiry" variant="secondary">
+              Send a Booking Inquiry
+            </LinkButton>
+          </div>
         </div>
       </section>
 
       {/* SECTION 3 — CUSTOM INQUIRIES */}
-      <section className="max-w-5xl mx-auto px-6 py-24">
+      <section id="inquiry" className="max-w-5xl mx-auto px-6 py-24 scroll-mt-20">
         <div className="mb-10">
           <h2 className="font-serif text-cream text-3xl uppercase tracking-[0.15em]">
-            Custom Inquiries
+            Booking Inquiries
           </h2>
           <div className="w-24 h-px bg-gold mt-5" />
           <p className="text-cream/80 text-base leading-relaxed max-w-2xl mt-6">
-            Multi-day retreats, recurring weekly classes, large group
-            events, or anything that doesn&rsquo;t fit the standard rental
-            tiers above &mdash; tell us about your event and we&rsquo;ll
-            follow up within one business day.
+            Single classes, workshops, ceremonies, multi-day retreats,
+            recurring weekly bookings &mdash; tell us about your event and
+            we&rsquo;ll follow up within one business day to confirm your
+            date and arrange payment.
           </p>
         </div>
 

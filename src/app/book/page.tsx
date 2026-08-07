@@ -2,12 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { LinkButton } from "@/components/Button";
-import { SimplyBookEmbed } from "@/components/SimplyBookEmbed";
+
+const CONTACT_EMAIL = "hello@darkhorsehealinglodge.com";
+const CONTACT_PHONE = "(613) 608-3048";
+const CONTACT_PHONE_TEL = "+16136083048";
+const BOOKING_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+  "Booking Inquiry — Dark Horse Healing Lodge"
+)}`;
 
 export const metadata: Metadata = {
   title: "Book / Rental Info",
   description:
-    "Rent the studio or fire pit at Dark Horse Healing Lodge in Carp, Ontario. Tiered pricing from 2 hours to full-day, fire pit add-ons, cancellation policy, and online booking with secure Stripe payment.",
+    "Rent the studio or fire pit at Dark Horse Healing Lodge in Carp, Ontario. Tiered pricing from 2 hours to full-day, fire pit add-ons, and cancellation policy. Email us to book your date.",
 };
 
 type Tier = {
@@ -109,17 +115,17 @@ export default function BookPage() {
         </h2>
         <div className="w-24 h-px bg-gold mx-auto mb-8" />
         <p className="text-cream/85 text-lg leading-[1.85] font-light">
-          Renting Dark Horse Healing Lodge is straightforward. Choose the option
-          that fits your event, book your date online, pay securely through
-          Stripe, and show up ready to work. The space comes clean, warm, and
-          set up for you.
+          Renting Dark Horse Healing Lodge is straightforward. Choose the
+          option that fits your event, email us with your preferred date and
+          time, and we&rsquo;ll confirm availability and arrange payment
+          directly with you. The space comes clean, warm, and set up for you.
         </p>
         <p className="text-cream/65 text-sm italic mt-6">
-          All prices in Canadian dollars. 13% Ontario HST added at checkout.
+          All prices in Canadian dollars, plus 13% Ontario HST.
         </p>
         <div className="mt-10">
           <LinkButton href="#book" variant="primary">
-            Jump to Booking Calendar
+            Email Us to Book
           </LinkButton>
         </div>
       </section>
@@ -149,8 +155,8 @@ export default function BookPage() {
               accent
             />
             <WhyCard
-              title="Instant Online Booking"
-              body="Browse availability and confirm your date in minutes. Secure Stripe checkout, instant email confirmation, no back-and-forth required."
+              title="Personal Booking"
+              body="No booking portals, no accounts, no checkout forms. Email us with your date and what you're planning, and you'll hear back from a real person within one business day."
             />
             <WhyCard
               title="Flexible 2-Hour Minimum"
@@ -162,7 +168,7 @@ export default function BookPage() {
             />
             <WhyCard
               title="Insurance-Friendly"
-              body="We accept your existing professional or event liability policy &mdash; just add us as additional insured. $50 off with coupon INSURANCE50 if you already have coverage."
+              body="We accept your existing professional or event liability policy &mdash; just add us as additional insured. Mention your coverage when you book and take $50 off your rental."
             />
             <WhyCard
               title="Sacred Fire Pits"
@@ -224,11 +230,8 @@ export default function BookPage() {
                 established community groups running non-commercial gatherings.
               </p>
               <p className="text-cream/80 text-xs leading-relaxed">
-                Apply coupon{" "}
-                <span className="font-mono bg-charcoal px-2 py-1 text-gold">
-                  COMMUNITY20
-                </span>{" "}
-                at checkout.
+                Mention your organization when you email us and we&rsquo;ll
+                apply the discount to your booking.
               </p>
             </div>
 
@@ -264,9 +267,9 @@ export default function BookPage() {
           </div>
 
           <p className="text-cream/60 text-sm italic text-center mt-8 max-w-3xl mx-auto">
-            Community access eligibility is verified after booking. Indigenous
-            access is offered by relationship &mdash; please reach out before
-            booking so we can connect.
+            Community access eligibility is confirmed when we reply to your
+            inquiry. Indigenous access is offered by relationship &mdash;
+            please reach out so we can connect.
           </p>
         </div>
       </section>
@@ -326,11 +329,11 @@ export default function BookPage() {
           </div>
 
           <p className="text-cream/60 text-sm italic text-center mt-8">
-            Need 5, 6, or 7 hours? Add extra hours at $65 + HST each at
-            checkout (max +4). Two-hour minimum booking.
+            Need 5, 6, or 7 hours? Extra hours are $65 + HST each &mdash;
+            just let us know in your inquiry. Two-hour minimum booking.
           </p>
           <p className="text-cream/50 text-xs italic text-center mt-2">
-            All prices in CAD. 13% Ontario HST is added at checkout.
+            All prices in CAD, plus 13% Ontario HST.
           </p>
         </div>
       </section>
@@ -413,9 +416,9 @@ export default function BookPage() {
             </h2>
             <div className="w-24 h-px bg-gold mx-auto mt-5" />
             <p className="text-cream/75 text-base mt-6 max-w-2xl mx-auto">
-              Optional extras you can add to any studio rental at checkout
-              &mdash; fire pit access for outdoor ceremony, or a dedicated
-              setup day for multi-day events.
+              Optional extras you can add to any studio rental &mdash; fire
+              pit access for outdoor ceremony, or a dedicated setup day for
+              multi-day events. Just mention them in your inquiry.
             </p>
           </div>
 
@@ -514,13 +517,10 @@ export default function BookPage() {
                 $50 Insurance Discount
               </p>
               <p className="text-cream/85 text-base leading-relaxed">
-                Have current liability coverage? Apply coupon code{" "}
-                <span className="font-mono bg-charcoal-light px-2 py-1 text-gold">
-                  INSURANCE50
-                </span>{" "}
-                at checkout to take $50 off your booking. After booking,
-                we&rsquo;ll email you with who to add as additional insured on
-                your existing policy.
+                Have current liability coverage? Mention it when you email us
+                and we&rsquo;ll take $50 off your booking. When we confirm
+                your date, we&rsquo;ll let you know who to add as additional
+                insured on your existing policy.
               </p>
             </div>
             <p>
@@ -562,7 +562,7 @@ export default function BookPage() {
               50% refund
             </p>
             <p className="text-cream/70 text-sm">
-              Half of your booking total returned to your card.
+              Half of your booking total is refunded.
             </p>
           </div>
           <div className="bg-charcoal-light border border-gold/20 p-6 text-center">
@@ -774,25 +774,81 @@ export default function BookPage() {
         </div>
       </section>
 
-      {/* BOOKING WIDGET EMBED */}
-      <section id="book" className="bg-charcoal-light border-y border-gold/15 py-20 scroll-mt-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-10">
+      {/* BOOK BY EMAIL */}
+      <section
+        id="book"
+        className="bg-charcoal-light border-y border-gold/15 py-20 scroll-mt-20"
+      >
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
             <p className="font-script text-gold text-3xl sm:text-5xl mb-3">
-              Pick a date.
+              Ready when you are.
             </p>
             <h2 className="font-serif text-cream text-3xl sm:text-4xl uppercase tracking-[0.15em]">
-              Book Your Time
+              Book by Email
             </h2>
             <div className="w-24 h-px bg-gold mx-auto mt-6" />
             <p className="text-cream/80 text-base leading-relaxed max-w-2xl mx-auto mt-6">
-              Browse availability, choose your rental window, and pay securely
-              through Stripe. Bookings can be made starting tomorrow up to 1
-              year in advance. You&rsquo;ll receive instant email confirmation.
+              Send us an email with your preferred date and a few details
+              about your event. We&rsquo;ll reply within one business day to
+              confirm availability and arrange payment. No portals, no
+              accounts &mdash; just a conversation.
             </p>
           </div>
 
-          <SimplyBookEmbed variant="iframe" />
+          <div className="bg-charcoal border border-gold/30 p-8 sm:p-12 text-center">
+            <p className="font-serif text-gold text-sm uppercase tracking-[0.2em] mb-6">
+              In your email, include
+            </p>
+            <ul className="text-cream/85 text-base leading-relaxed max-w-md mx-auto space-y-3 text-left mb-10">
+              <li className="flex gap-3">
+                <span className="text-gold flex-shrink-0">&bull;</span>
+                <span>Your preferred date and start/end times</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gold flex-shrink-0">&bull;</span>
+                <span>Which space you&rsquo;d like &mdash; studio, fire pit, or both</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gold flex-shrink-0">&bull;</span>
+                <span>The kind of event and expected number of guests</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gold flex-shrink-0">&bull;</span>
+                <span>
+                  Any add-ons or discounts that apply &mdash; fire pit
+                  service, setup day, insurance, or community rates
+                </span>
+              </li>
+            </ul>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <LinkButton href={BOOKING_MAILTO} variant="primary">
+                Email Us to Book
+              </LinkButton>
+              <LinkButton href="/contact" variant="secondary">
+                Use the Contact Form
+              </LinkButton>
+            </div>
+
+            <p className="text-cream/70 text-sm mt-8">
+              Prefer to talk it through? Call or text{" "}
+              <a
+                href={`tel:${CONTACT_PHONE_TEL}`}
+                className="text-gold hover:underline whitespace-nowrap"
+              >
+                {CONTACT_PHONE}
+              </a>{" "}
+              or write to{" "}
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="text-gold hover:underline"
+              >
+                {CONTACT_EMAIL}
+              </a>
+              .
+            </p>
+          </div>
         </div>
       </section>
 
