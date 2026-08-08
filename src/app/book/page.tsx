@@ -590,21 +590,12 @@ export default function BookPage() {
               No refund
             </p>
             <p className="text-cream/70 text-sm">
-              Full booking and security deposit are forfeited.
+              The full booking fee is forfeited.
             </p>
           </div>
         </div>
 
         <div className="bg-charcoal-light border border-gold/20 p-6 text-cream/80 text-sm leading-relaxed">
-          <p className="mb-3">
-            <span className="font-serif text-gold uppercase tracking-[0.15em]">
-              Security deposit:
-            </span>{" "}
-            A refundable security deposit of $250&ndash;$500 (depending on
-            event size and risk profile) is held separately at booking and
-            released within 7 business days post-event, minus any damages or
-            extra cleaning charges.
-          </p>
           <p>
             <span className="font-serif text-gold uppercase tracking-[0.15em]">
               Cleaning fee:
@@ -785,7 +776,7 @@ export default function BookPage() {
               </span>{" "}
               Dark Horse Healing Lodge reserves the right to terminate any
               booking that violates these rules, with no refund of the
-              rental fee or security deposit.
+              rental fee.
             </p>
           </div>
         </div>
