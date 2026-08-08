@@ -21,6 +21,7 @@ type Tier = {
   duration: string;
   price: string;
   per: string;
+  rate: string;
   body: string;
 };
 
@@ -28,29 +29,33 @@ const STUDIO_TIERS: Tier[] = [
   {
     name: "2 Hours",
     duration: "2 hr",
-    price: "$149",
+    price: "$130",
     per: "CAD",
+    rate: "$65/hr",
     body: "For single classes, private sessions, or short workshops. Two hours is the minimum booking.",
   },
   {
     name: "3 Hours",
     duration: "3 hr",
-    price: "$219",
+    price: "$180",
     per: "CAD",
+    rate: "$60/hr",
     body: "A solid block for slightly longer workshops, sound baths, or extended ceremonies.",
   },
   {
     name: "Half-Day",
     duration: "4 hr",
-    price: "$299",
+    price: "$220",
     per: "CAD",
+    rate: "$55/hr",
     body: "Ideal for half-day workshops, women's or men's circles, cacao ceremonies, or group intensives.",
   },
   {
     name: "Full Day",
     duration: "8 hr",
-    price: "$550",
+    price: "$400",
     per: "CAD",
+    rate: "$50/hr",
     body: "Built for retreats, yoga teacher trainings, and multi-session events. Full day from morning to evening.",
   },
 ];
@@ -59,22 +64,25 @@ const FIRE_PIT_TIERS: Tier[] = [
   {
     name: "2 Hours",
     duration: "2 hr",
-    price: "$250",
+    price: "$130",
     per: "CAD",
+    rate: "$65/hr",
     body: "Short outdoor ceremony, drum circle, or evening fire gathering.",
   },
   {
     name: "3 Hours",
     duration: "3 hr",
-    price: "$350",
+    price: "$180",
     per: "CAD",
+    rate: "$60/hr",
     body: "Extended evening fire ceremony or facilitated circle.",
   },
   {
     name: "Half-Day",
     duration: "4 hr",
-    price: "$450",
+    price: "$220",
     per: "CAD",
+    rate: "$55/hr",
     body: "Half-day outdoor program with time for opening, ceremony, and integration.",
   },
 ];
@@ -319,7 +327,7 @@ export default function BookPage() {
                   {tier.price}
                 </p>
                 <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
-                  {tier.per} + HST
+                  {tier.per} + HST &middot; {tier.rate}
                 </p>
                 <p className="text-cream/75 text-sm leading-relaxed flex-grow">
                   {tier.body}
@@ -329,8 +337,10 @@ export default function BookPage() {
           </div>
 
           <p className="text-cream/60 text-sm italic text-center mt-8">
-            Need 5, 6, or 7 hours? Extra hours are $65 + HST each &mdash;
-            just let us know in your inquiry. Two-hour minimum booking.
+            The longer you book, the lower your hourly rate. Need 5, 6, or 7
+            hours? Add extra hours to a half-day at $55 + HST each. Beyond 8
+            hours, additional hours are $50 + HST each. Two-hour minimum
+            booking.
           </p>
           <p className="text-cream/50 text-xs italic text-center mt-2">
             All prices in CAD, plus 13% Ontario HST.
@@ -372,7 +382,7 @@ export default function BookPage() {
                   {tier.price}
                 </p>
                 <p className="text-cream/60 text-xs uppercase tracking-wider mb-5">
-                  {tier.per} + HST
+                  {tier.per} + HST &middot; {tier.rate}
                 </p>
                 <p className="text-cream/75 text-sm leading-relaxed flex-grow">
                   {tier.body}
@@ -380,6 +390,12 @@ export default function BookPage() {
               </div>
             ))}
           </div>
+
+          <p className="text-cream/60 text-sm italic text-center mt-8">
+            Fire pit rentals pair with the wood add-ons below &mdash; bring
+            your own wood (+$75) or let us handle wood, setup, and cleanup
+            (+$150).
+          </p>
 
           {/* Burn ban notice */}
           <div className="max-w-3xl mx-auto mt-10 bg-charcoal-light border border-gold/30 p-6">
@@ -416,9 +432,10 @@ export default function BookPage() {
             </h2>
             <div className="w-24 h-px bg-gold mx-auto mt-5" />
             <p className="text-cream/75 text-base mt-6 max-w-2xl mx-auto">
-              Optional extras you can add to any studio rental &mdash; fire
-              pit access for outdoor ceremony, or a dedicated setup day for
-              multi-day events. Just mention them in your inquiry.
+              Optional extras you can add to any studio or fire pit rental
+              &mdash; wood and fire service for outdoor ceremony, or a
+              dedicated setup day for multi-day events. Just mention them in
+              your inquiry.
             </p>
           </div>
 
