@@ -27,6 +27,20 @@ export async function POST(req: Request) {
     );
   }
 
+  // Reject oversized submissions (spam/abuse guard)
+  if (
+    name.length > 200 ||
+    email.length > 254 ||
+    (body.phone?.length ?? 0) > 50 ||
+    subject.length > 200 ||
+    message.length > 5000
+  ) {
+    return NextResponse.json(
+      { error: "One or more fields exceed the allowed length." },
+      { status: 400 }
+    );
+  }
+
   const to = process.env.INQUIRY_EMAIL_TO ?? "hello@darkhorsehealinglodge.com";
   const apiKey = process.env.RESEND_API_KEY;
 

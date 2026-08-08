@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { LinkButton } from "@/components/Button";
 import { BookingInquiryForm } from "@/components/BookingInquiryForm";
 import { EventCheckoutButton } from "@/components/EventCheckoutButton";
@@ -121,9 +122,9 @@ export default function EventsPage() {
             <p className="text-cream/60 text-sm italic mt-3">
               Pricing, add-ons, cancellation policy, and insurance details
               are on the{" "}
-              <a href="/book" className="text-gold hover:underline">
+              <Link href="/book" className="text-gold hover:underline">
                 Book / Rental Info
-              </a>{" "}
+              </Link>{" "}
               page. Have liability insurance? Mention it in your inquiry for
               a $50 discount. All prices are in CAD plus 13% Ontario HST.
             </p>

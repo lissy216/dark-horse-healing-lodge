@@ -40,6 +40,24 @@ export async function POST(req: Request) {
     );
   }
 
+  // Reject oversized submissions (spam/abuse guard)
+  const fieldCaps: Array<[string | undefined, number]> = [
+    [name, 200],
+    [email, 254],
+    [body.phone, 50],
+    [body.eventType, 200],
+    [body.date, 100],
+    [body.duration, 100],
+    [body.attendees, 50],
+    [message, 5000],
+  ];
+  if (fieldCaps.some(([value, cap]) => (value?.length ?? 0) > cap)) {
+    return NextResponse.json(
+      { error: "One or more fields exceed the allowed length." },
+      { status: 400 }
+    );
+  }
+
   const to = process.env.INQUIRY_EMAIL_TO ?? "hello@darkhorsehealinglodge.com";
   const apiKey = process.env.RESEND_API_KEY;
 

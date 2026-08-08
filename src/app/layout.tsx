@@ -26,7 +26,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://darkhorsehealinglodge.com"),
+  metadataBase: new URL("https://www.darkhorsehealinglodge.com"),
   title: {
     default: "Dark Horse Healing Lodge — Healing & wellness event space in Carp, Ontario",
     template: "%s | Dark Horse Healing Lodge",
@@ -43,21 +43,52 @@ export const metadata: Metadata = {
     "sound healing space",
     "ceremony venue Ottawa",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://darkhorsehealinglodge.com",
+    url: "https://www.darkhorsehealinglodge.com",
     siteName: "Dark Horse Healing Lodge",
     title: "Dark Horse Healing Lodge",
     description:
       "A 19-acre healing and wellness event venue near Ottawa. Heal. Restore. Renew.",
+    images: [
+      {
+        url: "/images/hero-banner.jpg",
+        alt: "Dark Horse Healing Lodge — reclaimed-wood studio and grounds in Carp, Ontario",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Dark Horse Healing Lodge",
     description:
       "A 19-acre healing and wellness event venue near Ottawa. Heal. Restore. Renew.",
+    images: ["/images/hero-banner.jpg"],
   },
+};
+
+const businessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Dark Horse Healing Lodge",
+  description:
+    "A 19-acre healing and wellness event venue near Ottawa. Studio and sacred fire pit rentals for yoga, Reiki, breathwork, sound healing, ceremonies, and retreats.",
+  url: "https://www.darkhorsehealinglodge.com",
+  email: "hello@darkhorsehealinglodge.com",
+  telephone: "+1-613-608-3048",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "2206 Upper Dwyer Hill Road",
+    addressLocality: "Carp",
+    addressRegion: "ON",
+    postalCode: "K0A 1L0",
+    addressCountry: "CA",
+  },
+  image: "https://www.darkhorsehealinglodge.com/images/hero-banner.jpg",
+  priceRange: "$130-$400",
 };
 
 export default function RootLayout({
@@ -71,6 +102,10 @@ export default function RootLayout({
       className={`${playfair.variable} ${greatVibes.variable} ${lato.variable}`}
     >
       <body className="min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
